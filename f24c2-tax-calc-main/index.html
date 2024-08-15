@@ -4,6 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tax Calculator</title>
+    <style>
+        /* Reset some default browser styles */
+        body, h1, form {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Set a modern font and background */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #444;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        select, input[type="number"], input[type="button"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        input[type="button"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* Make the form responsive */
+        @media (max-width: 500px) {
+            form {
+                padding: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     
@@ -12,10 +73,58 @@
     <form>
         <select name="states" id="states">
             <option value="MA" selected>MA</option>
-            <option value="NH">NH</option>
+            <option value="AK">AK</option>
+            <option value="AL">AL</option>
+            <option value="AR">AR</option>
+            <option value="AZ">AZ</option>
+            <option value="CA">CA</option>
+            <option value="CO">CO</option>
+            <option value="CT">CT</option>
+            <option value="DC">DC</option>
+            <option value="DE">DE</option>
+            <option value="FL">FL</option>
+            <option value="GA">GA</option>
+            <option value="HI">HI</option>
+            <option value="IA">IA</option>
+            <option value="ID">ID</option>
+            <option value="IL">IL</option>
+            <option value="IN">IN</option>
+            <option value="KS">KS</option>
+            <option value="KY">KY</option>
+            <option value="LA">LA</option>
+            <option value="MD">MD</option>
             <option value="ME">ME</option>
+            <option value="MI">MI</option>
+            <option value="MN">MN</option>
+            <option value="MO">MO</option>
+            <option value="MS">MS</option>
+            <option value="MT">MT</option>
+            <option value="NC">NC</option>
+            <option value="ND">ND</option>
+            <option value="NE">NE</option>
+            <option value="NH">NH</option>
+            <option value="NJ">NJ</option>
+            <option value="NM">NM</option>
+            <option value="NV">NV</option>
+            <option value="NY">NY</option>
+            <option value="OH">OH</option>
+            <option value="OK">OK</option>
+            <option value="OR">OR</option>
+            <option value="PA">PA</option>
+            <option value="RI">RI</option>
+            <option value="SC">SC</option>
+            <option value="SD">SD</option>
+            <option value="TN">TN</option>
+            <option value="TX">TX</option>
+            <option value="UT">UT</option>
+            <option value="VA">VA</option>
+            <option value="VT">VT</option>
+            <option value="WA">WA</option>
+            <option value="WI">WI</option>
+            <option value="WV">WV</option>
+            <option value="WY">WY</option>
         </select>
-        <input type="number"><input type="button" value="Calculate Tax">
+        <input type="number"><input type="button" value="Calculate Tax" onclick="checkState()">
     </form>
     
 
