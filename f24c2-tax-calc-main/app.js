@@ -11,7 +11,7 @@
 // // - if the state is ME or NH make the taxRate 0.05
 
 
-// const grossIncome = 1000;
+// const grossIncome = 1000; 
 // const maTaxRate = 0.0423;
 // const nhTaxRate = 0.05;
 // const meTaxRate = 0.05;
@@ -140,7 +140,7 @@
 
 // v6: dele
 // - if the state is ME or NH make the taxRate 0.05
-
+//------------------------------\\
 const grossIncome = 1000; // Example gross income value
 const maTaxRate = 0.0423;
 const nhTaxRate = 0.05;
@@ -177,7 +177,7 @@ formFromHTML.addEventListener("submit", function(event) {
         console.log(`Net Income: ${netIncome}`);
     }
 });
-
+//---------------------------------..//
 // Tax calculation based on state selection
 const state = checkState();
 
