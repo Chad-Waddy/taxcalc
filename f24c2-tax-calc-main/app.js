@@ -140,12 +140,56 @@
 
 // v6: dele
 // - if the state is ME or NH make the taxRate 0.05
+
+//v8 : Chad
+/*
+!!!!!       New Values   !!!!!
+Implement functions to calculate taxes for each New England state 
+        (Maine, 
+        New Hampshire, 
+        Vermont, 
+        Massachusetts, 
+        Rhode Island, 
+        Connecticut).
+Create variables to store 
+        user name, income, selected state, and calculated tax.
+!!!!!                   !!!!!
+@@@@@    features in your JavaScript file   @@@@@
+Use control structures (if/else statements or switch) 
+to determine which state's tax calculation to use.
+*
+Implement DOM manipulation to update the page with:
+calculated tax amount 
+a personalized message including the user's name.
+@@@@@                                       @@@@@
+
+
+#####   Style your application using TailwindCS  ##### 
+
+visually appealing and easy to use.
+
+Style the results display area to clearly show the calculated tax information.
+
+Add form validation to ensure all required fields are filled and the income is a valid number 
+(use just HTML type number for this validation)
+[Bonus] Implement error handling to display appropriate messages if calculations fail or if invalid input is provided.
+ */
 //------------------------------\\
 const grossIncome = 1000; // Example gross income value
 const maTaxRate = 0.0423;
 const nhTaxRate = 0.05;
 const meTaxRate = 0.05;
 
+//^^^^^^-------------------\\
+// this is the dom control 
+const nameEl = document.querySelector("#usrn") 
+const displayEl = document.querySelector("#test")
+const form = document.querySelector('input')
+
+
+
+
+//%%%%%%-------------------\\
 // Selecting state from form input
 function checkState() {
     return document.getElementById('states').value;
@@ -180,7 +224,7 @@ formFromHTML.addEventListener("submit", function(event) {
 //---------------------------------..//
 // Tax calculation based on state selection
 const state = checkState();
-
+//MA
 if (state === "MA") {
     if (grossIncome > 200) {
         console.log(`Your gross income is ${grossIncome}`);
@@ -189,7 +233,9 @@ if (state === "MA") {
         const netIncome = grossIncome - taxDue;
         console.log(netIncome);
     }
-} else if (state === "NH") {
+}  
+//NH
+if (state === "NH") {
     if (grossIncome > 200) {
         const taxDue = grossIncome * nhTaxRate;
         const netIncome = (grossIncome - 20) - taxDue;
@@ -199,7 +245,9 @@ if (state === "MA") {
         const netIncome = grossIncome - taxDue;
         console.log(`Gross Income in NH: ${netIncome}`);
     }
-} else if (state === "ME") {
+} 
+//ME
+if (state === "ME") {
     if (grossIncome > 200) {
         const taxDue = grossIncome * meTaxRate;
         const netIncome = (grossIncome - 20) - taxDue;
@@ -210,3 +258,49 @@ if (state === "MA") {
         console.log(netIncome);
     }
 }
+//VT
+if (state === "VT") {
+    if (grossIncome > 200) {
+        const taxDue = grossIncome * meTaxRate;
+        const netIncome = (grossIncome - 20) - taxDue;
+        console.log(`Gross Income in Vt: ${netIncome}`);
+    } else {
+        const taxDue = grossIncome * meTaxRate;
+        const netIncome = grossIncome - taxDue;
+        console.log(netIncome);
+    }
+}
+//RI
+if (state === "RI") {
+    if (grossIncome > 200) {
+        const taxDue = grossIncome * meTaxRate;
+        const netIncome = (grossIncome - 20) - taxDue;
+        console.log(`Gross Income in Vt: ${netIncome}`);
+    } else {
+        const taxDue = grossIncome * meTaxRate;
+        const netIncome = grossIncome - taxDue;
+        console.log(netIncome);
+    }
+}
+//CT
+if (state === "CT ") {
+    if (grossIncome > 200) {
+        const taxDue = grossIncome * meTaxRate;
+        const netIncome = (grossIncome - 20) - taxDue;
+        console.log(`Gross Income in Vt: ${netIncome}`);
+    } else {
+        const taxDue = grossIncome * meTaxRate;
+        const netIncome = grossIncome - taxDue;
+        console.log(netIncome);
+    }
+}
+//---------------------new
+form.addEventListener('submit' , function(e){
+    e.preventDefault();
+
+    console.log(nameEl.value)
+
+    console.log(displayEl);
+
+displayEl.innerHTML  = `<h1> this is a test </h1>`;
+})
